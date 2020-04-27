@@ -1,0 +1,16 @@
+---
+- hosts: server
+  become: yes
+  tasks:
+    - name: Install postgresql
+      apt:
+        name: postgresql
+        update_cache: yes
+
+- hosts: client
+  become: yes
+  tasks:
+    - name: Install postgresql-client
+      apt:
+        name: postgresql-client
+        update_cache: yes
